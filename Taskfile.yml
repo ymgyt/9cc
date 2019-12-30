@@ -1,0 +1,12 @@
+version: '2'
+
+tasks:
+  build:
+    desc: Build docker compilerbook image
+    cmds:
+      - docker build -t compilerbook https://www.sigbus.info/compilerbook/Dockerfile
+
+  login:
+     desc: docker run -it
+     cmds:
+       - docker run --rm -it -v $(pwd):/ws compilerbook
